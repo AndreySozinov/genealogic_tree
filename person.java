@@ -19,4 +19,10 @@ public class person {
     public int getAge() {
         return age;
     }
+
+    @Override
+    public String toString() {
+        return "Person {name = '" + first_name + '\'' + 
+                        ", surname = '" + second_name + '\'' + '}';
+    }
 }

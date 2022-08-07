@@ -11,10 +11,13 @@ public class program {
         person JenyaPetrov = new person("Jenya", "Petrov", 6);
         person SidorPetrov = new person("Sidor", "Petrov", 2);
 
-        relationship IvanPetr = new relationship(IvanPetrov, PetrPetrov, Link.PARENT, Link.CHILD);
-        relationship ivanOlga = new relationship(IvanPetrov, OlgaPetrova, Link.PARENT, Link.CHILD);
-        relationship PetrVasya = new relationship(PetrPetrov, VasyaPetrov, Link.PARENT, Link.CHILD);
-        relationship PetrJenya = new relationship(PetrPetrov, JenyaPetrov, Link.PARENT, Link.CHILD);
-        relationship OlgaSidor = new relationship(OlgaPetrova, SidorPetrov, Link.PARENT, Link.CHILD);
+        tree my_tree = new tree();
+        my_tree.addLink(IvanPetrov, PetrPetrov, Link.PARENT, Link.CHILD);
+        my_tree.addLink(IvanPetrov, OlgaPetrova, Link.PARENT, Link.CHILD);
+        my_tree.addLink(PetrPetrov, VasyaPetrov, Link.PARENT, Link.CHILD);
+        my_tree.addLink(PetrPetrov, JenyaPetrov, Link.PARENT, Link.CHILD);
+        my_tree.addLink(OlgaPetrova, SidorPetrov, Link.PARENT, Link.CHILD);
+
+        
     }
 }

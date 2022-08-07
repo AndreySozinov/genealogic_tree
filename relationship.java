@@ -1,19 +1,35 @@
 package gen_tree;
 
 public class relationship {
-    enum Link {
+    public enum Link {
         PARENT,
         CHILD
     }
     
-    person person1, person2;
-    Link link1to2;
-    Link link2to1;
+    private person person1, person2;
+    private Link link;
 
-    public relationship(person personA, person personB, Link linkAtoB, Link linkBtoA) {
+    public relationship(person personA, person personB, Link link) {
         this.person1 = personA;
         this.person2 = personB;
-        this.link1to2 = linkAtoB;
-        this.link2to1 = linkBtoA;
+        this.link = link;
+    }
+
+    public person getPersonA() {
+        return person1;
+    }
+
+    public person getPersonB() {
+        return person2;
+    }
+
+    public Link getLink() {
+        return link;
+    }
+
+    @Override
+    public String toString() {
+        return "Link {personA = " + person1 + ", personB = " + person2 +
+                ", link = " + link + '}';
     }
 }
