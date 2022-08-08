@@ -21,6 +21,7 @@ public class Output {
                 try(java.io.FileWriter writer = new java.io.FileWriter("output.txt", false)) {
                     for (Relationship el : links) {
                         writer.write(el.toString());
+                        writer.write("\n");
                         writer.flush();
                     }
                 }

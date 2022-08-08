@@ -30,7 +30,8 @@ public class Program {
         my_tree.addLink(OlgaPetrova, VasyaPetrov, Link.AUNT, Link.NEPHEW);
         my_tree.addLink(OlgaPetrova, JenyaPetrov, Link.AUNT, Link.NEPHEW);
 
-        //Research.printAllBrothers(VasyaPetrov, my_tree);
-        Output.output_data(my_tree, Aim.CONSOLE);
+        Research.printAllBrothers(VasyaPetrov, my_tree);
+        
+        Output.output_data(my_tree, Aim.FILE);
     }
 }
