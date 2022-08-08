@@ -1,40 +1,32 @@
 package gen_tree;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.util.List;
 
-public class Output {
-    public enum Aim {
-        CONSOLE,
-        FILE
-    }
-    private String data;
-    private Aim aim;
-
-    public Output(String data, Aim aim) {
-        this.data = data;
-        this.aim = aim;
-
-        /**
-         * Вывод в консоль
-         */
-        if (this.aim == Aim.CONSOLE) {
-            System.out.println(this.data);
-        }
-
-        /**
-         * Вывод в файл
-         */
-        if (this.aim == Aim.FILE) {
-            try(FileWriter writer = new FileWriter("output.txt", false)) {
-                writer.write(this.data);
-                writer.flush();
+public class Output {    
+        public static void output_data(Tree data, Aim aim) {
+            List<Relationship> links = data.getLinks();
+            /**
+             * Вывод в консоль
+             */
+            if (aim == Aim.CONSOLE) {
+                for (Relationship el : links) {
+                    System.out.println(el);
+                }
             }
-            catch(IOException ex) {
-                System.out.println(ex.getMessage());
+    
+            /**
+             * Вывод в файл
+             */
+            if (aim == Aim.FILE) {
+                try(java.io.FileWriter writer = new java.io.FileWriter("output.txt", false)) {
+                    for (Relationship el : links) {
+                        writer.write(el.toString());
+                        writer.flush();
+                    }
+                }
+                catch(java.io.IOException ex) {
+                    System.out.println(ex.getMessage());
+                }
             }
         }
     }
-
-
-}
