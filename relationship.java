@@ -1,25 +1,33 @@
 package gen_tree;
 
-public class relationship {
+public class Relationship {
     public enum Link {
         PARENT,
-        CHILD
+        CHILD,
+        BROTHER,
+        SISTER,
+        UNCLE,
+        AUNT,
+        WIFE,
+        HUSBAND,
+        NEPHEW,
+        NIECE
     }
     
-    private person person1, person2;
+    private Person person1, person2;
     private Link link;
 
-    public relationship(person personA, person personB, Link link) {
+    public Relationship(Person personA, Person personB, Link link) {
         this.person1 = personA;
         this.person2 = personB;
         this.link = link;
     }
 
-    public person getPersonA() {
+    public Person getPersonA() {
         return person1;
     }
 
-    public person getPersonB() {
+    public Person getPersonB() {
         return person2;
     }
 

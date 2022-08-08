@@ -1,13 +1,13 @@
 package gen_tree;
 
-public class person {
+public class Person {
     private String first_name, second_name;
-    private int age;
+    private int birthyear;
     
-    public person(String name, String surname, int age) {
+    public Person(String name, String surname, int birthyear) {
         this.first_name = name;
         this.second_name = surname;
-        this.age = age;
+        this.birthyear = birthyear;
     }
     
     public String getName() {
@@ -16,8 +16,8 @@ public class person {
     public String getSurname() {
         return second_name;
     }
-    public int getAge() {
-        return age;
+    public int getBirthyear() {
+        return birthyear;
     }
 
     @Override
