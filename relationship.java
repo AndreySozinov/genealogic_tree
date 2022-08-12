@@ -14,7 +14,8 @@ public class Relationship {
         NIECE
     }
     
-    private Person person1, person2;
+    private Person person1;
+    private Person person2;
     private Link link;
 
     public Relationship(Person personA, Person personB, Link link) {

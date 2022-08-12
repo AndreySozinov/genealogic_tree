@@ -1,28 +1,31 @@
 package gen_tree;
 
+import java.time.Year;
+
 public class Person {
-    private String first_name, second_name;
-    private int birthyear;
+    private String firstName; 
+    private String secondName;
+    private Year birthYear;
     
-    public Person(String name, String surname, int birthyear) {
-        this.first_name = name;
-        this.second_name = surname;
-        this.birthyear = birthyear;
+    public Person(String name, String surname, int year) {
+        this.firstName = name;
+        this.secondName = surname;
+        this.birthYear = Year.of(year);
     }
     
     public String getName() {
-        return first_name;
+        return firstName;
     }
     public String getSurname() {
-        return second_name;
+        return secondName;
     }
-    public int getBirthyear() {
-        return birthyear;
+    public Year getBirthyear() {
+        return birthYear;
     }
 
     @Override
     public String toString() {
-        return "Person {name = '" + first_name + '\'' + 
-                        ", surname = '" + second_name + '\'' + '}';
+        return "Person {name = '" + firstName + '\'' + 
+                        ", surname = '" + secondName + '\'' + '}';
     }
 }

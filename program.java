@@ -4,34 +4,34 @@ import gen_tree.Relationship.Link;
 
 public class Program {
     public static void main(String[] args) {
-        Person TonyaPetrova = new Person("Tonya", "Petrova", 1955);
-        Person IvanPetrov = new Person("Ivan", "Petrov", 1952);
-        Person PetrPetrov = new Person("Petr", "Petrov", 1978);
-        Person LyubaPetrova = new Person("Lyuba", "Petrova", 1976);
-        Person OlgaPetrova = new Person("Olga", "Petrova", 1980);
-        Person VasyaPetrov = new Person("Vasya", "Petrov", 1998);
-        Person JenyaPetrov = new Person("Jenya", "Petrov", 1996);
-        Person SidorPetrov = new Person("Sidor", "Petrov", 2002);
+        Person tonyaPetrova = new Person("Tonya", "Petrova", 1958);
+        Person ivanPetrov = new Person("Ivan", "Petrov", 1952);
+        Person petrPetrov = new Person("Petr", "Petrov", 1978);
+        Person lyubaPetrova = new Person("Lyuba", "Petrova", 1976);
+        Person olgaPetrova = new Person("Olga", "Petrova", 1980);
+        Person vasyaPetrov = new Person("Vasya", "Petrov", 1998);
+        Person jenyaPetrov = new Person("Jenya", "Petrov", 1996);
+        Person sidorPetrov = new Person("Sidor", "Petrov", 2002);
         
-        Tree my_tree = new Tree();
-        my_tree.addLink(IvanPetrov, PetrPetrov, Link.PARENT, Link.CHILD);
-        my_tree.addLink(IvanPetrov, OlgaPetrova, Link.PARENT, Link.CHILD);
-        my_tree.addLink(PetrPetrov, VasyaPetrov, Link.PARENT, Link.CHILD);
-        my_tree.addLink(PetrPetrov, JenyaPetrov, Link.PARENT, Link.CHILD);
-        my_tree.addLink(OlgaPetrova, SidorPetrov, Link.PARENT, Link.CHILD);
-        my_tree.addLink(TonyaPetrova, IvanPetrov, Link.WIFE, Link.HUSBAND);
-        my_tree.addLink(LyubaPetrova, PetrPetrov, Link.WIFE, Link.HUSBAND);
-        my_tree.addLink(PetrPetrov, OlgaPetrova, Link.BROTHER, Link.SISTER);
-        my_tree.addLink(VasyaPetrov, JenyaPetrov, Link.BROTHER, Link.BROTHER);
-        my_tree.addLink(VasyaPetrov, SidorPetrov, Link.BROTHER, Link.BROTHER);
-        my_tree.addLink(JenyaPetrov, SidorPetrov, Link.BROTHER, Link.BROTHER);
-        my_tree.addLink(PetrPetrov, SidorPetrov, Link.UNCLE, Link.NEPHEW);
-        my_tree.addLink(LyubaPetrova, SidorPetrov, Link.AUNT, Link.NEPHEW);
-        my_tree.addLink(OlgaPetrova, VasyaPetrov, Link.AUNT, Link.NEPHEW);
-        my_tree.addLink(OlgaPetrova, JenyaPetrov, Link.AUNT, Link.NEPHEW);
+        Tree myTree = new Tree();
+        myTree.addLink(ivanPetrov, petrPetrov, Link.PARENT, Link.CHILD);
+        myTree.addLink(ivanPetrov, olgaPetrova, Link.PARENT, Link.CHILD);
+        myTree.addLink(petrPetrov, vasyaPetrov, Link.PARENT, Link.CHILD);
+        myTree.addLink(petrPetrov, jenyaPetrov, Link.PARENT, Link.CHILD);
+        myTree.addLink(olgaPetrova, sidorPetrov, Link.PARENT, Link.CHILD);
+        myTree.addLink(tonyaPetrova, ivanPetrov, Link.WIFE, Link.HUSBAND);
+        myTree.addLink(lyubaPetrova, petrPetrov, Link.WIFE, Link.HUSBAND);
+        myTree.addLink(petrPetrov, olgaPetrova, Link.BROTHER, Link.SISTER);
+        myTree.addLink(vasyaPetrov, jenyaPetrov, Link.BROTHER, Link.BROTHER);
+        myTree.addLink(vasyaPetrov, sidorPetrov, Link.BROTHER, Link.BROTHER);
+        myTree.addLink(jenyaPetrov, sidorPetrov, Link.BROTHER, Link.BROTHER);
+        myTree.addLink(petrPetrov, sidorPetrov, Link.UNCLE, Link.NEPHEW);
+        myTree.addLink(lyubaPetrova, sidorPetrov, Link.AUNT, Link.NEPHEW);
+        myTree.addLink(olgaPetrova, vasyaPetrov, Link.AUNT, Link.NEPHEW);
+        myTree.addLink(olgaPetrova, jenyaPetrov, Link.AUNT, Link.NEPHEW);
 
-        Research.printAllBrothers(VasyaPetrov, my_tree);
+        Research.printAllBrothers(vasyaPetrov, myTree);
         
-        Output.output_data(my_tree, Aim.FILE);
+        //Output.output_data(my_tree, Aim.FILE);
     }
 }

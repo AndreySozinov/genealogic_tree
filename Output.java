@@ -3,7 +3,7 @@ package gen_tree;
 import java.util.List;
 
 public class Output {    
-        public static void output_data(Tree data, Aim aim) {
+        public static void outputData(Tree data, Aim aim) {
             List<Relationship> links = data.getLinks();
             /**
              * Вывод в консоль
