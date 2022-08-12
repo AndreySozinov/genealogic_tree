@@ -1,5 +1,8 @@
 package gen_tree;
 
+import java.util.Iterator;
+import java.util.List;
+
 import gen_tree.Relationship.Link;
 
 public class Program {
@@ -30,8 +33,19 @@ public class Program {
         myTree.addLink(olgaPetrova, vasyaPetrov, Link.AUNT, Link.NEPHEW);
         myTree.addLink(olgaPetrova, jenyaPetrov, Link.AUNT, Link.NEPHEW);
 
-        Research.printAllBrothers(vasyaPetrov, myTree);
+        //Research.printAllBrothers(vasyaPetrov, myTree);
         
-        //Output.output_data(my_tree, Aim.FILE);
+        //Output.outputData(myTree, Aim.CONSOLE);
+        
+        // Сортировка по годам рождения от младших к старшим
+        List<Relationship> links = myTree.getLinks();
+        links.sort(new MyComparator());
+        
+        Iterator<Relationship> iter = links.iterator();
+        while (iter.hasNext()) {
+            System.out.format("%s %s %s\n", iter.next().getPersonA(), 
+                                    iter.next().getLink(), 
+                                    iter.next().getPersonA().getBirthyear());
+        }
     }
 }
