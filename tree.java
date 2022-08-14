@@ -1,11 +1,12 @@
 package gen_tree;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import gen_tree.Relationship.Link;
 
-public class Tree {
+public class Tree implements Iterable<Relationship>{
     private List<Relationship> familyTree = new ArrayList<>();
 
     public List<Relationship> getLinks() {
@@ -18,6 +19,24 @@ public class Tree {
 
         familyTree.add(l1);
         familyTree.add(l2);
+    }
+
+    @Override
+    public Iterator<Relationship> iterator() {
+        Iterator<Relationship> iter = new Iterator<Relationship>() {
+             private int index = 0;
+
+             @Override
+             public boolean hasNext() {
+                 return index < familyTree.size();
+             }
+
+             @Override
+             public Relationship next() {
+                 return familyTree.get(index++);
+             }
+        };
+        return iter;
     }
 
 }

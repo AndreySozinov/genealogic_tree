@@ -5,6 +5,7 @@ import java.util.List;
 import gen_tree.Relationship.Link;
 
 public class Research {
+// Много одинакового кода, нужно упростить - интерфейс?
     public static void printAllChildren(Person person, Tree tree) {
         List<Relationship> links = tree.getLinks();
 

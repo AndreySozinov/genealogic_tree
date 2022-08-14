@@ -41,4 +41,6 @@ public class Relationship {
         return "Link {personA = " + person1 + ", personB = " + person2 +
                 ", link = " + link + '}';
     }
+
+    
 }

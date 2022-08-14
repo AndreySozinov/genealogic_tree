@@ -1,5 +1,6 @@
 package gen_tree;
 
+import java.io.FileWriter;
 import java.util.List;
 
 public class Output {    
@@ -18,7 +19,7 @@ public class Output {
              * Вывод в файл
              */
             if (aim == Aim.FILE) {
-                try(java.io.FileWriter writer = new java.io.FileWriter("output.txt", false)) {
+                try(FileWriter writer = new java.io.FileWriter("Output.txt", false)) {
                     for (Relationship el : links) {
                         writer.write(el.toString());
                         writer.write("\n");

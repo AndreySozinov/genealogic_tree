@@ -41,11 +41,17 @@ public class Program {
         List<Relationship> links = myTree.getLinks();
         links.sort(new MyComparator());
         
-        Iterator<Relationship> iter = links.iterator();
-        while (iter.hasNext()) {
-            System.out.format("%s %s %s\n", iter.next().getPersonA(), 
-                                    iter.next().getLink(), 
-                                    iter.next().getPersonA().getBirthyear());
+        // Iterator<Relationship> iter = links.iterator();
+        // while (iter.hasNext()) {
+        //     System.out.format("%s %s %s\n", iter.next().getPersonA(), 
+        //                             iter.next().getLink(), 
+        //                             iter.next().getPersonA().getBirthyear());
+        // }
+
+        for (var link : myTree) {
+            System.out.format("%s %s %s\n", link.getPersonA(), 
+                                     link.getLink(), 
+                                     link.getPersonA().getBirthyear());
         }
     }
 }
