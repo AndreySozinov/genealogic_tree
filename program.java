@@ -1,6 +1,5 @@
 package gen_tree;
 
-import java.util.Iterator;
 import java.util.List;
 
 import gen_tree.Relationship.Link;
